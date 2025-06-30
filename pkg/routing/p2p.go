@@ -102,14 +102,14 @@ func NewP2PRouter(ctx context.Context, addr string, bs Bootstrapper, registryPor
 				continue
 			}
 			if isIp6(addr) {
-				ip6Ma = addr
+				// ip6Ma = addr
 				continue
 			}
 			ip4Ma = addr
 		}
-		if ip6Ma != nil {
-			return []ma.Multiaddr{ip6Ma}
-		}
+		// if ip6Ma != nil {
+		// 	return []ma.Multiaddr{ip6Ma}
+		// }
 		if ip4Ma != nil {
 			return []ma.Multiaddr{ip4Ma}
 		}
