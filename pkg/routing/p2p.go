@@ -96,7 +96,7 @@ func NewP2PRouter(ctx context.Context, addr string, bs Bootstrapper, registryPor
 		return nil, err
 	}
 	addrFactoryOpt := libp2p.AddrsFactory(func(addrs []ma.Multiaddr) []ma.Multiaddr {
-		var ip4Ma, ip6Ma ma.Multiaddr
+		var ip4Ma ma.Multiaddr
 		for _, addr := range addrs {
 			if manet.IsIPLoopback(addr) {
 				continue
